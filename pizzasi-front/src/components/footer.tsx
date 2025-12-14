@@ -11,8 +11,8 @@ export default function BottomNav() {
               <img
                 src={
                   isActive
-                    ? "/icons/home-active.svg"
-                    : "/icons/home.svg"
+                    ? "/icons/home.svg"
+                    : "/icons/home-active.svg"
                 }
                 alt="Home"
               />
