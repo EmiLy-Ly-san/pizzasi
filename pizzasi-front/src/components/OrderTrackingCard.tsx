@@ -11,7 +11,7 @@ export default function OrderTrackingCard() {
       </div>
 
       {/* Card */}
-      <div className="mt-4 rounded-[26px] border border-zinc-200 bg-white p-5 shadow-sm">
+      <div className="mt-4 rounded-xl border border-zinc-200 bg-white p-5 shadow-sm">
         {/* Status + order id */}
         <div className="flex items-center justify-between">
           <span className="inline-flex items-center gap-2 rounded-full bg-[rgba(255,237,212,0.7)] px-4 py-2 text-xs text-[#FF6900] font-medium">
@@ -27,7 +27,7 @@ export default function OrderTrackingCard() {
             <img
               src="/images/pizza2.svg"
               alt="Pizza"
-              className="h-16 w-16 rounded-2xl object-cover"
+              className="h-16 w-16 rounded-xl object-cover"
             />
 
             <div>
@@ -72,7 +72,7 @@ export default function OrderTrackingCard() {
         </div>
 
         {/* Arrived block */}
-        <div className="mt-5 rounded-2xl bg-zinc-50 p-4 flex items-center gap-3">
+        <div className="mt-5 rounded-xl bg-zinc-50 p-4 flex items-center gap-3">
           <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#FFEDD4] opacity-70">
             <img src="/icons/clock.svg" alt="" className="h-5 w-5" />
           </div>
@@ -85,7 +85,7 @@ export default function OrderTrackingCard() {
         </div>
 
         {/* CTA */}
-        <button className="mt-6 w-full rounded-2xl bg-[#4D6269] py-3 text-white flex items-center justify-center gap-2 text-[15px]">
+        <button className="mt-6 w-full rounded-xl bg-[#4D6269] py-3 text-white flex items-center justify-center gap-2 text-[15px]">
           <img src="/icons/position.svg" alt="" className="h-5 w-5" />
           Suivre la livraison
         </button>
