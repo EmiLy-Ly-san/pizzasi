@@ -2,7 +2,7 @@ export default function PizzaOfTheMomentCard() {
   return (
     <section className="px-5 mt-6">
       {/* Card */}
-      <div className=" relative overflow-hidden rounded-3xl bg-[#ad252e] px-5 py-6">
+      <div className=" relative overflow-hidden rounded-xl bg-[#ad252e] px-5 py-6">
         {/* Text */}
         <div className=" max-w-[65%]">
           <h2 className="text-l text-white">
