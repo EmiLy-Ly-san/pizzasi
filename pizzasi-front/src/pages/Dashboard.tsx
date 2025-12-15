@@ -1,5 +1,11 @@
+import PizzaMomentCard from "../components/PizzaMomentCard";
+import OrderTrackingCard from "../components/OrderTrackingCard";
+
 export default function Dashboard() {
   return (
-    <div>Dashboard</div>
-  )
+    <div className="pb-32">
+      <PizzaMomentCard />
+      <OrderTrackingCard />
+    </div>
+  );
 }
