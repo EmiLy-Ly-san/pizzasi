@@ -60,12 +60,12 @@ export default function SubscriptionCard() {
         </div>
 
         <div className="mt-5 grid grid-cols-2 gap-4">
-          <button className="flex items-center justify-center gap-1 rounded-xl bg-zinc-100 px-3 py-2 text-[12px] font-medium text-zinc-700 ">
+          <button className="flex items-center justify-center gap-1 rounded-xl bg-zinc-100 px-3 py-2 text-[12px] text-zinc-700 ">
             <img src="/icons/stop.svg" alt="pause icon" />
             Mettre en pause
           </button>
 
-          <button className="rounded-xl bg-[#59656C] py-2 text-[12px] text-white">
+          <button className="rounded-xl bg-[#4D6269] py-2 text-[12px] text-white">
             Modifier
           </button>
         </div>
