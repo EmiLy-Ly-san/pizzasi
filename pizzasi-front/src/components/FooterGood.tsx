@@ -5,8 +5,8 @@ export default function Footer() {
     <nav className="fixed bottom-6 left-[190px] z-50 w-[85%] max-w-md -translate-x-1/2">
       <div className="relative rounded-full bg-zinc-900 p-1 shadow-lg">
         <div className="flex items-center justify-between">
-          {/* HOME */}
-          <NavLink to="/dashboard" end>
+
+          <NavLink to="/" end>
             {({ isActive }) => (
               <img
                 src={
@@ -19,9 +19,18 @@ export default function Footer() {
             )}
           </NavLink>
 
-          <button aria-label="Panier">
-            <img src="/icons/cart-icon.svg" alt="cart" />
-          </button>
+          <NavLink to="/cart" end>
+            {({ isActive }) => (
+              <img
+                src={
+                  isActive
+                    ? "/icons/cart-icon.svg"
+                    : "/icons/cart-icon.svg"
+                }
+                alt="Home"
+              />
+            )}
+          </NavLink>
 
           <button aria-label="Profil">
             <img src="/icons/profil-icon.svg" alt="cart" />
