@@ -1,6 +1,7 @@
 import PizzaMomentCard from "../components/PizzaMomentCard";
 import OrderTrackingCard from "../components/OrderTrackingCard";
 import SubscriptionCard from "../components/SubscriptionPage";
+import OrderHistory from "../components/OrderHistory";
 
 export default function Dashboard() {
   return (
@@ -8,6 +9,7 @@ export default function Dashboard() {
       <PizzaMomentCard />
       <OrderTrackingCard />
       <SubscriptionCard />
+      <OrderHistory />
     </div>
   );
 }

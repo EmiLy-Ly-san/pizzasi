@@ -1,0 +1,33 @@
+{
+  "title": "Historique de commandes",
+  "actionLabel": "Voir tout",
+  "orders": [
+    {
+      "id": "12342",
+      "name": "Pizza Margherita x2",
+      "date": "5 Décembre 2025",
+      "status": "delivered",
+      "total": 16.99,
+      "image": "/images/pizza2.svg",
+      "canReorder": true
+    },
+    {
+      "id": "12340",
+      "name": "Pizza Regina",
+      "date": "1 Décembre 2025",
+      "status": "delivered",
+      "total": 9.99,
+      "image": "/images/pizza2.svg",
+      "canReorder": true
+    },
+    {
+      "id": "12338",
+      "name": "Pizza 4 Fromages x3",
+      "date": "28 Novembre 2025",
+      "status": "cancelled",
+      "total": 32.97,
+      "image": "/images/pizza2.svg",
+      "canReorder": false
+    }
+  ]
+}
