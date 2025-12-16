@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 type Pizza = {
   id: number;
   name: string;
@@ -38,12 +36,9 @@ export default function PizzaCatalog() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
       {pizzas.map((pizza) => (
-        <motion.div
+        <div
           key={pizza.id}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="rounded-2xl shadow-md overflow-hidden bg-white"
+          className="rounded-2xl shadow-md overflow-hidden bg-white transition-transform duration-300 hover:-translate-y-1"
         >
           <img
             src={pizza.image}
@@ -77,7 +72,7 @@ export default function PizzaCatalog() {
               </button>
             </div>
           </div>
-        </motion.div>
+        </div>
       ))}
     </div>
   );
