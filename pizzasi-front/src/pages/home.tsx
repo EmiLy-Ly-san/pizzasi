@@ -1,10 +1,3 @@
-import React from "react";
-import { View, Text, Image, ScrollView, TouchableOpacity } from "react-native";
-
-// =====================
-// Types
-// =====================
-
 type Achievement = {
   id: string;
   title: string;
@@ -21,148 +14,75 @@ type Props = {
   achievements: Achievement[];
 };
 
-// =====================
-// Component
-// =====================
-
-const SuccesDefisScreen: React.FC<Props> = ({
+export default function SuccesDefisScreen({
   avatarUrl,
   bannerImageUrl,
   userName,
   role,
   achievements,
-}) => {
+}: Props) {
   return (
-    <ScrollView style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
+    <div className="bg-white min-h-screen">
       {/* Header */}
-      <View style={{
-        flexDirection: "row",
-        alignItems: "center",
-        padding: 16,
-        justifyContent: "space-between",
-      }}>
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <Image
-            source={{ uri: avatarUrl }}
-            style={{ width: 48, height: 48, borderRadius: 24 }}
+      <div className="flex items-center justify-between p-4">
+        <div className="flex items-center gap-3">
+          <img
+            src={avatarUrl}
+            className="w-12 h-12 rounded-full"
+            alt="avatar"
           />
-          <View style={{ marginLeft: 12 }}>
-            <Text style={{ fontSize: 16, fontWeight: "600" }}>
-              Bienvenido {userName} !
-            </Text>
-            <Text style={{ color: "#8A8A8A" }}>{role}</Text>
-          </View>
-        </View>
-
-        <View
-          style={{
-            width: 40,
-            height: 40,
-            borderRadius: 20,
-            backgroundColor: "#F2F2F2",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Text>🔔</Text>
-        </View>
-      </View>
+          <div>
+            <p className="font-semibold">Bienvenue {userName} !</p>
+            <p className="text-gray-400 text-sm">{role}</p>
+          </div>
+        </div>
+        <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center">
+          🔔
+        </div>
+      </div>
 
       {/* Banner */}
-      <View style={{ paddingHorizontal: 16 }}>
-        <View
-          style={{
-            backgroundColor: "#F6B76E",
-            borderRadius: 20,
-            padding: 20,
-            overflow: "hidden",
-          }}
-        >
-          <Text style={{ color: "#FFFFFF", fontSize: 20, fontWeight: "700" }}>
+      <div className="px-4">
+        <div className="relative bg-orange-400 rounded-2xl p-5 text-white overflow-hidden">
+          <h2 className="text-xl font-bold">
             Proposez nous votre recette
-          </Text>
-          <Text style={{ color: "#FFFFFF", marginTop: 8 }}>
+          </h2>
+          <p className="mt-2">
             Proposez votre recette et devenez la Pizza du Trimestre !
-          </Text>
+          </p>
 
-          <TouchableOpacity
-            style={{
-              marginTop: 16,
-              backgroundColor: "#FFFFFF",
-              paddingVertical: 10,
-              paddingHorizontal: 20,
-              borderRadius: 30,
-              alignSelf: "flex-start",
-            }}
-          >
-            <Text style={{ color: "#F6B76E", fontWeight: "600" }}>
-              Participer →
-            </Text>
-          </TouchableOpacity>
+          <button className="mt-4 bg-white text-orange-400 font-semibold px-5 py-2 rounded-full">
+            Participer →
+          </button>
 
-          <Image
-            source={{ uri: bannerImageUrl }}
-            style={{
-              position: "absolute",
-              right: -20,
-              top: 20,
-              width: 160,
-              height: 160,
-              resizeMode: "contain",
-            }}
+          <img
+            src={bannerImageUrl}
+            className="absolute right-[-20px] top-5 w-40"
+            alt="pizza"
           />
-        </View>
-      </View>
-
-      {/* Section title */}
-      <View
-        style={{
-          flexDirection: "row",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: 16,
-        }}
-      >
-        <Text style={{ fontSize: 18, fontWeight: "700" }}>
-          Succès & Défis
-        </Text>
-        <Text style={{ color: "#8A8A8A" }}>20 / 70</Text>
-      </View>
+        </div>
+      </div>
 
       {/* Achievements */}
-      <View style={{ paddingHorizontal: 16 }}>
+      <div className="p-4 space-y-3">
         {achievements.map((item) => (
-          <View
+          <div
             key={item.id}
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              padding: 12,
-              borderRadius: 16,
-              backgroundColor: "#FAFAFA",
-              marginBottom: 12,
-            }}
+            className="flex items-center gap-3 bg-gray-50 p-3 rounded-xl"
           >
-            <Image
-              source={{ uri: item.iconUrl }}
-              style={{ width: 48, height: 48, marginRight: 12 }}
-            />
-
-            <View style={{ flex: 1 }}>
-              <Text style={{ fontWeight: "600" }}>{item.title}</Text>
-              <Text style={{ color: "#8A8A8A", fontSize: 13 }}>
+            <img src={item.iconUrl} className="w-12 h-12" />
+            <div className="flex-1">
+              <p className="font-semibold">{item.title}</p>
+              <p className="text-sm text-gray-400">
                 {item.description}
-              </Text>
-            </View>
-
-            <Text style={{ fontSize: 20 }}>
+              </p>
+            </div>
+            <span className="text-xl">
               {item.completed ? "✅" : "⬜"}
-            </Text>
-          </View>
+            </span>
+          </div>
         ))}
-      </View>
-    </ScrollView>
+      </div>
+    </div>
   );
-};
-
-export default SuccesDefisScreen;
+}

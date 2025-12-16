@@ -1,10 +1,21 @@
-const pizzas = [
+import { motion } from "framer-motion";
+
+type Pizza = {
+  id: number;
+  name: string;
+  price: number;
+  image: string;
+  description: string;
+};
+
+const pizzas: Pizza[] = [
   {
     id: 1,
     name: "Margherita",
     price: 8.5,
     image: "https://via.placeholder.com/300",
-    description: "Une pizza classique avec sauce tomate, mozzarella et basilic frais.",
+    description:
+      "Une pizza classique avec sauce tomate, mozzarella et basilic frais.",
   },
   {
     id: 2,
@@ -18,7 +29,8 @@ const pizzas = [
     name: "4 Fromages",
     price: 11,
     image: "https://via.placeholder.com/300",
-    description: "Mélange savoureux de mozzarella, gorgonzola, emmental et parmesan.",
+    description:
+      "Mélange savoureux de mozzarella, gorgonzola, emmental et parmesan.",
   },
 ];
 
@@ -31,33 +43,40 @@ export default function PizzaCatalog() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
+          className="rounded-2xl shadow-md overflow-hidden bg-white"
         >
-          <Card className="rounded-2xl shadow-md overflow-hidden">
-            <img
-              src={pizza.image}
-              alt={pizza.name}
-              className="w-full h-48 object-cover"
-            />
-            <cardContent className="p-4 flex flex-col gap-3">
-              <h2 className="text-xl font-semibold">{pizza.name}</h2>
-              <p className="text-sm text-gray-600">{pizza.description}</p>
-              <div className="flex items-center justify-between mt-2">
-                <span className="text-lg font-bold">{pizza.price} €</span>
-              </div>
+          <img
+            src={pizza.image}
+            alt={pizza.name}
+            className="w-full h-48 object-cover"
+          />
 
-              <div className="flex items-center gap-3 mt-3">
-                <input
-                  type="number"
-                  min="1"
-                  defaultValue="1"
-                  className="w-16 border rounded-lg p-2"
-                />
-                <Button className="rounded-2xl px-4 py-2">
-                  Ajouter au panier
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
+          <div className="p-4 flex flex-col gap-3">
+            <h2 className="text-xl font-semibold">{pizza.name}</h2>
+
+            <p className="text-sm text-gray-600">
+              {pizza.description}
+            </p>
+
+            <div className="flex items-center justify-between mt-2">
+              <span className="text-lg font-bold">
+                {pizza.price} €
+              </span>
+            </div>
+
+            <div className="flex items-center gap-3 mt-3">
+              <input
+                type="number"
+                min={1}
+                defaultValue={1}
+                className="w-16 border rounded-lg p-2"
+              />
+
+              <button className="bg-orange-500 text-white rounded-2xl px-4 py-2 hover:bg-orange-600 transition">
+                Ajouter au panier
+              </button>
+            </div>
+          </div>
         </motion.div>
       ))}
     </div>
