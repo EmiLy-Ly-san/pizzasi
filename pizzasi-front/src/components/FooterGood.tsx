@@ -27,19 +27,27 @@ export default function Footer() {
                     ? "/icons/cart-icon.svg"
                     : "/icons/cart-icon.svg"
                 }
-                alt="Home"
+                alt="cart"
               />
             )}
           </NavLink>
 
-          <button aria-label="Profil">
-            <img src="/icons/profil-icon.svg" alt="cart" />
-          </button>
-
+          <NavLink to="/dashboard" end>
+            {({ isActive }) => (
+              <img
+                src={
+                  isActive
+                    ? "/icons/profil-icon.svg"
+                    : "/icons/profil-icon.svg"
+                }
+                alt="profil"
+              />
+            )}
+          </NavLink>
           <button
             aria-label="Menu"
           >
-            <img src="/icons/menu-icon.svg" alt="menu" />
+            <img src="/icons/menu-icon.svg" alt="liste des produits" />
           </button>
         </div>
       </div>
