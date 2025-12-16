@@ -1,0 +1,79 @@
+type Pizza = {
+  id: number;
+  name: string;
+  price: number;
+  image: string;
+  description: string;
+};
+
+const pizzas: Pizza[] = [
+  {
+    id: 1,
+    name: "Margherita",
+    price: 8.5,
+    image: "https://via.placeholder.com/300",
+    description:
+      "Une pizza classique avec sauce tomate, mozzarella et basilic frais.",
+  },
+  {
+    id: 2,
+    name: "Reine",
+    price: 10,
+    image: "https://via.placeholder.com/300",
+    description: "Jambon, champignons, mozzarella et sauce tomate.",
+  },
+  {
+    id: 3,
+    name: "4 Fromages",
+    price: 11,
+    image: "https://via.placeholder.com/300",
+    description:
+      "Mélange savoureux de mozzarella, gorgonzola, emmental et parmesan.",
+  },
+];
+
+export default function PizzaCatalog() {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+      {pizzas.map((pizza) => (
+        <div
+          key={pizza.id}
+          className="rounded-2xl shadow-md overflow-hidden bg-white transition-transform duration-300 hover:-translate-y-1"
+        >
+          <img
+            src={pizza.image}
+            alt={pizza.name}
+            className="w-full h-48 object-cover"
+          />
+
+          <div className="p-4 flex flex-col gap-3">
+            <h2 className="text-xl font-semibold">{pizza.name}</h2>
+
+            <p className="text-sm text-gray-600">
+              {pizza.description}
+            </p>
+
+            <div className="flex items-center justify-between mt-2">
+              <span className="text-lg font-bold">
+                {pizza.price} €
+              </span>
+            </div>
+
+            <div className="flex items-center gap-3 mt-3">
+              <input
+                type="number"
+                min={1}
+                defaultValue={1}
+                className="w-16 border rounded-lg p-2"
+              />
+
+              <button className="bg-orange-500 text-white rounded-2xl px-4 py-2 hover:bg-orange-600 transition">
+                Ajouter au panier
+              </button>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
