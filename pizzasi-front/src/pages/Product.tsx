@@ -2,10 +2,13 @@ import { useParams } from "react-router-dom";
 import data from "../data/products.json";
 import type { Product } from "../data/products-mock";
 import { useCart } from "../hook/useCart";
+import Toast from "../components/Toast";
+import { useToast } from "../hook/useToast";
 
 export default function Product() {
   const { id } = useParams<{ id: string }>();
   const { addItem } = useCart();
+  const { visible, message, show } = useToast();
 
   const product = (data.products as Product[]).find(
     (p) => p.id === id
@@ -77,13 +80,13 @@ export default function Product() {
       <div className="pl-8 w-[92%] max-w-md pt-6">
         <button
           className="
-          flex w-full items-center justify-center gap-2
-          rounded-full bg-zinc-900 py-1 text-white
-          transition-transform duration-150
-          hover:scale-[1.01]
-          active:scale-95 active:shadow-inner
-        "
-          onClick={() =>
+    flex w-full items-center justify-center gap-2
+    rounded-full bg-zinc-900 py-1 text-white
+    transition-transform duration-150
+    hover:scale-[1.01]
+    active:scale-95 active:shadow-inner
+  "
+          onClick={() => {
             addItem({
               id: product.id,
               name: product.name,
@@ -91,14 +94,18 @@ export default function Product() {
               quantity: 1,
               image: product.image,
               sku: product.sku,
-              description: product.subtitle, // simple fallback
-            })
-          }
+              description: product.subtitle,
+            });
+
+            show("Produit ajouté au panier");
+          }}
         >
           <img src="/icons/cart-icon.svg" alt="cart" className="h-10 w-10" />
           Ajouter
         </button>
+
       </div>
+      <Toast visible={visible} message={message} />
     </div>
   );
 }

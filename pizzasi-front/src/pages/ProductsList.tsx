@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import data from "../data/products.json";
 import type { ProductCategory } from "../data/products-mock";
 import { useCart } from "../hook/useCart";
+import Toast from "../components/Toast";
+import { useToast } from "../hook/useToast";
 
 type FilterValue = ProductCategory | "tous";
 
@@ -13,7 +15,7 @@ type ProductJson = {
   name: string;
   subtitle: string;
   price: number;
-  unit: string; // ex: "€/carton"
+  unit: string;
   image: string;
 };
 
@@ -24,8 +26,6 @@ const filters: { label: string; value: FilterValue }[] = [
   { label: "Pizza", value: "pizza" },
   { label: "Fond", value: "fond" },
 ];
-
-
 
 export default function ProductsList() {
   const [activeFilter, setActiveFilter] = useState<FilterValue>("tous");
@@ -39,8 +39,12 @@ export default function ProductsList() {
 
   const { addItem } = useCart();
 
+  const { visible, message, show } = useToast();
+
   return (
     <div className="pb-32 px-5 pt-6">
+      <Toast visible={visible} message={message} />
+
       <h1 className="text-[22px] font-semibold text-zinc-800">
         Liste des produits
       </h1>
@@ -59,8 +63,8 @@ export default function ProductsList() {
               key={f.value}
               onClick={() => setActiveFilter(f.value)}
               className={`rounded-full px-4 py-2 text-sm whitespace-nowrap ${activeFilter === f.value
-                ? "bg-black text-white"
-                : "bg-zinc-100 text-zinc-700"
+                  ? "bg-black text-white"
+                  : "bg-zinc-100 text-zinc-700"
                 }`}
             >
               {f.label}
@@ -113,7 +117,7 @@ export default function ProductsList() {
                 "
                 aria-label="Ajouter"
                 onClick={(e) => {
-                  e.preventDefault(); // reste sur la liste (ne navigue pas)
+                  e.preventDefault();
                   addItem({
                     id: p.id,
                     name: p.name,
@@ -121,19 +125,25 @@ export default function ProductsList() {
                     price: p.price,
                     quantity: 1,
                     image: p.image,
-                    description: p.subtitle, // en attendant une vraie description
+                    description: p.subtitle,
                   });
-                }}>
-                <img src="/icons/cart-icon.svg" alt="cart icon" className="h-6 w-6" />
+                  show("Ajouté au panier");
+                }}
+              >
+                <img
+                  src="/icons/cart-icon.svg"
+                  alt="cart icon"
+                  className="h-6 w-6"
+                />
               </button>
             </div>
           </Link>
-
         ))}
       </div>
-    </div >
+    </div>
   );
 }
+
 
 
 
