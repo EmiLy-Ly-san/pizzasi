@@ -1,5 +1,5 @@
+// src/pages/Cart.tsx
 import { useCart } from "../hook/useCart";
-
 
 function formatMoney(v: number) {
   return v.toLocaleString("fr-FR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -7,9 +7,40 @@ function formatMoney(v: number) {
 
 export default function Cart() {
   const { items, increase, decrease } = useCart();
+  if (items.length === 0) {
+    return (
+      <div className="px-5 pt-4 pb-32">
+        <h1 className="mt-2 text-[18px] font-medium text-zinc-700">Mon panier</h1>
 
-  const discount = 8.99; // fake valeur comme la maquette
+        <div className="mt-10 rounded-2xl bg-zinc-50 p-6 text-center">
+          <div className="text-[14px] font-medium text-zinc-700">
+            Vous n’avez rien dans votre panier
+          </div>
+          <div className="mt-2 text-xs text-zinc-400">
+            Ajoutez des produits depuis la liste ou une fiche produit.
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  const discount = 8.99;
   const total = items.reduce((sum, it) => sum + it.price * it.quantity, 0);
+
+  if (items.length === 0) {
+    return (
+      <div className="px-5 pt-4 pb-32">
+        <h1 className="mt-2 text-[18px] font-medium text-zinc-700">Mon panier</h1>
+
+        <div className="mt-10 rounded-2xl bg-[#F6F8FA] p-6 text-center">
+          <div className="text-[14px] text-zinc-700">Vous n’avez rien dans votre panier</div>
+          <div className="mt-2 text-[12px] text-zinc-400">
+            Ajoutez des produits depuis la liste ou une fiche produit.
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="px-5 pt-4 pb-32">
@@ -47,7 +78,13 @@ export default function Cart() {
               <button
                 aria-label="Diminuer"
                 onClick={() => decrease(it.id)}
-                className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-zinc-700 shadow-sm"
+                className="
+                  flex h-7 w-7 items-center justify-center rounded-full
+                  bg-white text-zinc-700 shadow-sm
+                  transition-transform duration-150
+                  active:scale-90 active:shadow-none
+                "
+
               >
                 –
               </button>
@@ -59,7 +96,12 @@ export default function Cart() {
               <button
                 aria-label="Augmenter"
                 onClick={() => increase(it.id)}
-                className="flex h-7 w-7 items-center justify-center rounded-full bg-zinc-900 text-white"
+                className="
+                flex h-7 w-7 items-center justify-center rounded-full
+                bg-zinc-900 text-white
+                transition-transform duration-150
+                active:scale-90
+              "
               >
                 +
               </button>
@@ -78,9 +120,7 @@ export default function Cart() {
         <div className="flex items-end justify-between">
           <div>
             <div className="text-[10px] text-zinc-400">Prix total</div>
-            <div className="text-[20px] text-zinc-700">
-              {formatMoney(total)}$
-            </div>
+            <div className="text-[20px] text-zinc-700">{formatMoney(total)}$</div>
           </div>
 
           <button className="flex items-center gap-2 rounded-xl bg-[#1A1A1A] px-8 py-3 text-[12px] text-white">
@@ -89,6 +129,7 @@ export default function Cart() {
           </button>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
+

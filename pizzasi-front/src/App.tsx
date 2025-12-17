@@ -2,17 +2,19 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './components/Layout';
 import Dashboard from './pages/Dashboard';
 import Cart from './pages/Cart';
-import Product from './pages/Product';
 import ProductsList from './pages/ProductsList';
+import Home from './pages/Home';
+import Product from './pages/Product';
 
 const router = createBrowserRouter([
   {
     element: <Layout />,
     children: [
-      { path: '/', element: <Product /> },
+      { path: '/', element: <Home /> },
       { path: '/dashboard', element: <Dashboard /> },
       { path: '/cart', element: <Cart /> },
       { path: '/products', element: <ProductsList /> },
+      { path: '/product/:id', element: <Product /> },
     ],
   },
 ]);

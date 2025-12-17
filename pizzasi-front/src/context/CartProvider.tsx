@@ -3,40 +3,21 @@ import type { ReactNode } from "react";
 import type { CartContextValue, CartItem } from "../types/cart.types";
 import { CartContext } from "./CartContext";
 
-
-const seedItems: CartItem[] = [
-  {
-    id: "p1",
-    name: "Pizza Diavola",
-    price: 18,
-    quantity: 2,
-    image: "/images/pizza2.svg",
-    sku: "BE003",
-    description: "Sauce tomate, mozzarella, salami piquant",
-  },
-  {
-    id: "p2",
-    name: "Pizza Margherita",
-    price: 12,
-    quantity: 1,
-    image: "/images/pizza1.svg",
-    sku: "BE001",
-    description: "Sauce tomate, mozzarella, basilic",
-  },
-];
-
 export default function CartProvider({ children }: { children: ReactNode }) {
-  const [items, setItems] = useState<CartItem[]>(seedItems);
+  // ✅ panier vide au départ (plus de fake items)
+  const [items, setItems] = useState<CartItem[]>([]);
 
   const addItem = (item: CartItem) => {
     setItems((prev) => {
       const existing = prev.find((p) => p.id === item.id);
       if (existing) {
         return prev.map((p) =>
-          p.id === item.id ? { ...p, quantity: p.quantity + item.quantity } : p
+          p.id === item.id
+            ? { ...p, quantity: p.quantity + (item.quantity || 1) }
+            : p
         );
       }
-      return [...prev, item];
+      return [...prev, { ...item, quantity: item.quantity || 1 }];
     });
   };
 
@@ -52,14 +33,16 @@ export default function CartProvider({ children }: { children: ReactNode }) {
     );
   };
 
+  // ✅ si on passe à 0 : on retire l’item
   const decrease = (id: string) => {
-    setItems((prev) =>
-      prev
-        .map((p) =>
-          p.id === id ? { ...p, quantity: Math.max(1, p.quantity - 1) } : p
-        )
-      // si tu veux supprimer quand ça passe à 0 plus tard, on changera ici
-    );
+    setItems((prev) => {
+      const current = prev.find((p) => p.id === id);
+      if (!current) return prev;
+      if (current.quantity <= 1) return prev.filter((p) => p.id !== id);
+      return prev.map((p) =>
+        p.id === id ? { ...p, quantity: p.quantity - 1 } : p
+      );
+    });
   };
 
   const value: CartContextValue = useMemo(
