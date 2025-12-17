@@ -62,13 +62,13 @@ export default function Cart() {
 
               <div className="leading-tight">
                 <div className="text-[10px] text-zinc-700">
-                  {it.name} {it.sku ? `- ${it.sku}` : ""}
+                  {it.name} {it.sku ? `- €{it.sku}` : ""}
                 </div>
                 <div className="mt-1 max-w-[180px] text-[8px] text-zinc-400">
                   {it.description ?? "Description à remplir plus tard"}
                 </div>
                 <div className="mt-2 text-[20px] text-zinc-700">
-                  {formatMoney(it.price)}$
+                  {formatMoney(it.price)}€
                 </div>
               </div>
             </div>
@@ -114,13 +114,13 @@ export default function Cart() {
       <div className="mt-16 space-y-5">
         <div className="flex items-center justify-between text-[10px] text-zinc-400">
           <span>Votre réduction</span>
-          <span className="text-[16px] text-zinc-700">{formatMoney(discount)}$</span>
+          <span className="text-[16px] text-zinc-700">{formatMoney(discount)}€</span>
         </div>
 
         <div className="flex items-end justify-between">
           <div>
             <div className="text-[10px] text-zinc-400">Prix total</div>
-            <div className="text-[20px] text-zinc-700">{formatMoney(total)}$</div>
+            <div className="text-[20px] text-zinc-700">{formatMoney(total)}€</div>
           </div>
 
           <button className="flex items-center gap-2 rounded-xl bg-[#1A1A1A] px-8 py-3 text-[12px] text-white">
