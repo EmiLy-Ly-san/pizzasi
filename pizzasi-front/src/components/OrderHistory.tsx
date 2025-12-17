@@ -92,7 +92,9 @@ export default function OrderHistory() {
 
             {/* Reorder button */}
             {o.canReorder && (
-              <button className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-[#D2D3D5] py-2 text-[12px] text-zinc-600">
+              <button className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-[#D2D3D5] py-2 text-[12px] text-zinc-600
+           transition-transform duration-150 active:scale-95"
+              >
                 <img src="/icons/reload.svg" alt="reorder" />
                 Commander à nouveau
               </button>

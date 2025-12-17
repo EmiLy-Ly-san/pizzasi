@@ -1,0 +1,168 @@
+{
+  "reorderIds": [
+    "kit-semoule-33",
+    "pizza-jambon-champignons"
+  ],
+  "products": [
+    {
+      "id": "pizza-margherita",
+      "sku": "BE001",
+      "category": "pizza",
+      "name": "Margherita",
+      "subtitle": "diamètre 28 cm",
+      "price": 26,
+      "unit": "€/carton",
+      "image": "/images/pizza-margherita.png"
+    },
+    {
+      "id": "pizza-diavola",
+      "sku": "BE002",
+      "category": "pizza",
+      "name": "Diavola",
+      "subtitle": "diamètre 28 cm",
+      "price": 28,
+      "unit": "€/carton",
+      "image": "/images/pizza-diavola.png"
+    },
+    {
+      "id": "pizza-quatre-fromages",
+      "sku": "BE003",
+      "category": "pizza",
+      "name": "Quatre Fromages",
+      "subtitle": "diamètre 28 cm",
+      "price": 30,
+      "unit": "€/carton",
+      "image": "/images/pizza-quatre-fromages.png"
+    },
+    {
+      "id": "pizza-jambon-champignons",
+      "sku": "BE004",
+      "category": "pizza",
+      "name": "Jambon et champignons",
+      "subtitle": "diamètre 28 cm",
+      "price": 28,
+      "unit": "€/carton",
+      "image": "/images/pizza-jambon-champignons.png"
+    },
+    {
+      "id": "pizza-truffes-champignons",
+      "sku": "BE005",
+      "category": "pizza",
+      "name": "Truffes et champignons",
+      "subtitle": "diamètre 28 cm",
+      "price": 30,
+      "unit": "€/carton",
+      "image": "/images/pizza-truffes-champignons.png"
+    },
+    {
+      "id": "fond-tomate",
+      "sku": "BE006",
+      "category": "fond",
+      "name": "Fond tomate",
+      "subtitle": "diamètre 28 cm",
+      "price": 26,
+      "unit": "€/carton",
+      "image": "/images/fond-tomate.png"
+    },
+    {
+      "id": "blanca-levain-33",
+      "sku": "BE007",
+      "category": "frais",
+      "name": "Blanca levain",
+      "subtitle": "diamètre 33 cm",
+      "price": 52,
+      "unit": "€/carton",
+      "image": "/images/blanca-levain.png"
+    },
+    {
+      "id": "pinsa",
+      "sku": "BE008",
+      "category": "frais",
+      "name": "Pinsa",
+      "subtitle": "15 × 30 cm",
+      "price": 50,
+      "unit": "€/carton",
+      "image": "/images/pinsa.png"
+    },
+    {
+      "id": "kit-semoule-33",
+      "sku": "BE009",
+      "category": "frais",
+      "name": "Kit semoule",
+      "subtitle": "diamètre 33 cm",
+      "price": 50,
+      "unit": "€/carton",
+      "image": "/images/kit-semoule-33.png"
+    },
+    {
+      "id": "kit-semoule-28",
+      "sku": "BE010",
+      "category": "frais",
+      "name": "Kit semoule",
+      "subtitle": "diamètre 28 cm",
+      "price": 48,
+      "unit": "€/carton",
+      "image": "/images/kit-semoule-28.png"
+    },
+    {
+      "id": "kit-bambino",
+      "sku": "BE011",
+      "category": "frais",
+      "name": "Kit bambino",
+      "subtitle": "diamètre 20 cm",
+      "price": 45,
+      "unit": "€/carton",
+      "image": "/images/kit-bambino.png"
+    },
+    {
+      "id": "foldwich-panzerotto",
+      "sku": "BE012",
+      "category": "surgele",
+      "name": "Foldwich panzerotto",
+      "subtitle": "Fabriqué à la main en Italie",
+      "price": 28,
+      "unit": "€/carton",
+      "image": "/images/foldwich-panzerotto.png"
+    },
+    {
+      "id": "panuozzo",
+      "sku": "BE013",
+      "category": "surgele",
+      "name": "Panuozzo",
+      "subtitle": "Fabriqué à la main en Italie",
+      "price": 28,
+      "unit": "€/carton",
+      "image": "/images/panuozzo.png"
+    },
+    {
+      "id": "paton-a-pizza-180",
+      "sku": "BE014",
+      "category": "surgele",
+      "name": "Paton a pizza",
+      "subtitle": "180 g",
+      "price": 24,
+      "unit": "€/carton",
+      "image": "/images/paton-180.png"
+    },
+    {
+      "id": "paton-a-pizza-200",
+      "sku": "BE015",
+      "category": "surgele",
+      "name": "Paton a pizza",
+      "subtitle": "200 g",
+      "price": 26,
+      "unit": "€/carton",
+      "image": "/images/paton-200.png"
+    },
+    {
+      "id": "paton-a-pizza-220",
+      "sku": "BE016",
+      "category": "surgele",
+      "name": "Paton a pizza",
+      "subtitle": "220 g",
+      "price": 28,
+      "unit": "€/carton",
+      "image": "/images/paton-220.png"
+    }
+  ]
+}
