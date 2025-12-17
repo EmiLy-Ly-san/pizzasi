@@ -12,7 +12,7 @@
       "subtitle": "diamètre 28 cm",
       "price": 26,
       "unit": "€/carton",
-      "image": "/images/pizza-margherita.png"
+      "image": "/images/truffeschampignons.svg"
     },
     {
       "id": "pizza-diavola",
@@ -22,7 +22,7 @@
       "subtitle": "diamètre 28 cm",
       "price": 28,
       "unit": "€/carton",
-      "image": "/images/pizza-diavola.png"
+      "image": "/images/diavola.svg"
     },
     {
       "id": "pizza-quatre-fromages",
@@ -32,7 +32,7 @@
       "subtitle": "diamètre 28 cm",
       "price": 30,
       "unit": "€/carton",
-      "image": "/images/pizza-quatre-fromages.png"
+      "image": "/images/quatrefromages.svg"
     },
     {
       "id": "pizza-jambon-champignons",
@@ -42,7 +42,7 @@
       "subtitle": "diamètre 28 cm",
       "price": 28,
       "unit": "€/carton",
-      "image": "/images/pizza-jambon-champignons.png"
+      "image": "/images/jambonchampigons.svg"
     },
     {
       "id": "pizza-truffes-champignons",
@@ -52,7 +52,7 @@
       "subtitle": "diamètre 28 cm",
       "price": 30,
       "unit": "€/carton",
-      "image": "/images/pizza-truffes-champignons.png"
+      "image": "/images/truffeschampignons.svg"
     },
     {
       "id": "fond-tomate",
@@ -62,7 +62,7 @@
       "subtitle": "diamètre 28 cm",
       "price": 26,
       "unit": "€/carton",
-      "image": "/images/fond-tomate.png"
+      "image": "/images/fondtomate.svg"
     },
     {
       "id": "blanca-levain-33",
@@ -72,7 +72,7 @@
       "subtitle": "diamètre 33 cm",
       "price": 52,
       "unit": "€/carton",
-      "image": "/images/blanca-levain.png"
+      "image": "/images/blanclevain.svg"
     },
     {
       "id": "pinsa",
@@ -82,7 +82,7 @@
       "subtitle": "15 × 30 cm",
       "price": 50,
       "unit": "€/carton",
-      "image": "/images/pinsa.png"
+      "image": "/images/pinsa.svg"
     },
     {
       "id": "kit-semoule-33",
@@ -92,7 +92,7 @@
       "subtitle": "diamètre 33 cm",
       "price": 50,
       "unit": "€/carton",
-      "image": "/images/kit-semoule-33.png"
+      "image": "/images/kitsemoule.svg"
     },
     {
       "id": "kit-semoule-28",
@@ -102,7 +102,7 @@
       "subtitle": "diamètre 28 cm",
       "price": 48,
       "unit": "€/carton",
-      "image": "/images/kit-semoule-28.png"
+      "image": "/images/kitsemoule.svg"
     },
     {
       "id": "kit-bambino",
@@ -112,7 +112,7 @@
       "subtitle": "diamètre 20 cm",
       "price": 45,
       "unit": "€/carton",
-      "image": "/images/kit-bambino.png"
+      "image": "/images/kitsemoule.svg"
     },
     {
       "id": "foldwich-panzerotto",
@@ -122,7 +122,7 @@
       "subtitle": "Fabriqué à la main en Italie",
       "price": 28,
       "unit": "€/carton",
-      "image": "/images/foldwich-panzerotto.png"
+      "image": "/images/foldwichpanzerotto.svg"
     },
     {
       "id": "panuozzo",
@@ -132,7 +132,7 @@
       "subtitle": "Fabriqué à la main en Italie",
       "price": 28,
       "unit": "€/carton",
-      "image": "/images/panuozzo.png"
+      "image": "/images/panuozzo.svg"
     },
     {
       "id": "paton-a-pizza-180",
@@ -142,7 +142,7 @@
       "subtitle": "180 g",
       "price": 24,
       "unit": "€/carton",
-      "image": "/images/paton-180.png"
+      "image": "/images/patonapizza.svg"
     },
     {
       "id": "paton-a-pizza-200",
@@ -152,7 +152,7 @@
       "subtitle": "200 g",
       "price": 26,
       "unit": "€/carton",
-      "image": "/images/paton-200.png"
+      "image": "/images/patonapizza.svg"
     },
     {
       "id": "paton-a-pizza-220",
@@ -162,7 +162,7 @@
       "subtitle": "220 g",
       "price": 28,
       "unit": "€/carton",
-      "image": "/images/paton-220.png"
+      "image": "/images/patonapizza.svg"
     }
   ]
 }
