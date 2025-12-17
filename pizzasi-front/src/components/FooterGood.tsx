@@ -44,11 +44,18 @@ export default function Footer() {
               />
             )}
           </NavLink>
-          <button
-            aria-label="Menu"
-          >
-            <img src="/icons/menu-icon.svg" alt="liste des produits" />
-          </button>
+          <NavLink to="/products" end>
+            {({ isActive }) => (
+              <img
+                src={
+                  isActive
+                    ? "/icons/menu-icon.svg"
+                    : "/icons/menu-icon.svg"
+                }
+                alt="liste des produits"
+              />
+            )}
+          </NavLink>
         </div>
       </div>
     </nav>
